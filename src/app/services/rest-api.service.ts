@@ -9,7 +9,7 @@ import { Car } from '../interfaces/car';
 export class RestAPIService {
   url: string = "https://localhost:7263"
   constructor(private http: HttpClient) { }
-
+  //This Service class is used to call api endpoints
   getAllCars(): Observable<Car[]> {
     return this.http.get<Car[]>(this.url+'/Cars/GetAll');
   }
