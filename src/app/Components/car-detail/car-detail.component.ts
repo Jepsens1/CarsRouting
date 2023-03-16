@@ -23,19 +23,23 @@ export class CarDetailComponent implements OnInit {
     }
   ngOnInit()
   {
+    //Gets the car by the url query params
     const id = this.route.snapshot.paramMap.get('model');
     this.apiService.getCar(id!).subscribe(car => this.car = car)
     
   }
   editCar()
   {
+    //Calls api with form data
     this.apiService.editCar(this.editCarForm.get('rank')!.value,this.editCarForm.get('model')!.value,this.editCarForm.get('quantity')!.value,this.editCarForm.get('changeQuantityPercent')!.value)
     .subscribe(s => console.log(s));
     this.router.navigate(["cars"]);
   }
   deleteCar()
   {
+    //Calls api delete
     this.apiService.deleteCar(this.car!.model!).subscribe(text => console.log(text));
+    //Redirects to cars page
     this.router.navigate(['cars']);
   }
 }

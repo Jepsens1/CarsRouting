@@ -12,6 +12,7 @@ export class LoginComponent {
   password: string = "";  
   constructor(private authService: AuthenticationService, private router: Router)
   {
+    //Checks to see if we are already logged in
     if(localStorage.getItem("adminuser") !== null)
     {
       this.router.navigate(['cars']);

@@ -18,10 +18,12 @@ export class CarsMasterComponent implements OnInit{
   }
   ngOnInit()
   {
+    //Fetch all cars
     this.apiService.getAllCars().subscribe(carsapi => this.cars = carsapi);
   }
   editCar(car: Car)
   {
+    //Routes to car/:model
     this.router.navigate(['car/', car.model])
   }
   logout()
