@@ -1,0 +1,8 @@
+<form [formGroup]="addCarForm" (ngSubmit)="addCar()">
+    <input type="number" name="rank" formControlName="rank" placeholder="Rank">
+    <input type="text" name="model" formControlName="model" placeholder="Model">
+    <input type="number" name="quantity" formControlName="quantity" placeholder="Quantity">
+    <input type="number" name="changeQuantityPercent" formControlName="changeQuantityPercent"
+    placeholder="ChangeQuantityPercent">
+    <button class="btn btn-primary" type="submit">Add car</button>
+</form>

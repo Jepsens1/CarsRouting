@@ -1,0 +1,16 @@
+<div *ngIf="car">
+    <p>Rank: {{car.rank}}</p>
+    <p>Model: {{car.model}}</p>
+    <p>Quantity: {{car.quantity}}</p>
+    <p>ChangeQuantityPercent: {{car.changeQuantityPercent}}</p>
+<form [formGroup]="editCarForm" (ngSubmit)="editCar()">
+    <input type="number" name="rank" formControlName="rank" placeholder="Rank">
+    <input type="text" name="model" formControlName="model" placeholder="Model">
+    <input type="number" name="quantity" formControlName="quantity" placeholder="Quantity">
+    <input type="number" name="changeQuantityPercent" formControlName="changeQuantityPercent"
+    placeholder="ChangeQuantityPercent">
+    <button class="btn btn-primary" type="submit">Submit Changes</button>
+    <button class="btn btn-danger" type="button" (click)="deleteCar()">Delete</button>
+</form>
+</div>
+

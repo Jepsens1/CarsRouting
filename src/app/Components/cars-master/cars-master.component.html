@@ -1,0 +1,21 @@
+<div *ngIf="cars">
+    <button type="button" (click)="addCar()" class="btn btn-primary">Add Car</button>
+    <button type="button" (click)="logout()" class="btn btn-primary">Logout</button>
+    <table class="table">
+        <thead>
+          <th>Rank</th>
+          <th>Model</th>
+          <th>Quantity</th>
+          <th>ChangeQuantityPercent(%)</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let car of cars">
+            <td>{{car.rank}}</td>
+            <td>{{car.model}}</td>
+            <td>{{car.quantity}}</td>
+            <td>{{car.changeQuantityPercent}}</td>
+            <td><button  type="button" class="btn btn-primary" (click)="editCar(car)">Edit</button></td>
+          </tr>
+        </tbody>
+      </table>
+</div>
